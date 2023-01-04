@@ -24,12 +24,12 @@ Name | Link | Description | Size (data points x attributes) | Embedding
 
 Download the repository and create an environment with the dependencies:
 ```
-git clone https://github.com/leitte/NoLiES
+git clone https://github.com/Jan-To/nolies
 conda env create -f nolies.yml
 conda activate nolies
 ```
 
-Make a copy of the temple jupyter notebook:
+Make a copy of the template jupyter notebook:
 ```
 cp template.ipynb my_data.ipynb
 ```
@@ -50,10 +50,17 @@ If you find this useful, please cite our paper:
 
 ```
 @article{
-title={Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data},
-authors={Jan-Tobias Sohns and Michaela Schmitt and Fabian Jirasek and Hans Hasse and Heike Leitte},
-journal={submitted to IEEE VIS 2021},
-year=2021
+title = {Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data},
+authors = {J.-T. Sohns and M. Schmitt and F. Jirasek and H. Hasse and H. Leitte},
+journal = {IEEE Transactions on Visualization &amp; Computer Graphics},
+year = {2022},
+volume = {28},
+number = {01},
+pages = {540-550},
+doi = {10.1109/TVCG.2021.3114870},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {jan}
 }
 ```
 
