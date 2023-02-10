@@ -8,3 +8,4 @@ dependencies:
   - scikit-learn
   - shapely
   - conda-forge::umap-learn
+  - openpyxl
