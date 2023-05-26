@@ -176,7 +176,7 @@ class Rangeset():
                 points    = MultiPoint(self.points_2d[df_select.index])
                 poly      = unary_union([polygon for polygon in triangulate(points) if self._max_edge(polygon) < self.threshold])
 
-                filter_points = points
+                filter_points = points.geoms
 
                 # points are in one or multiple polygons
                 if not poly.is_empty:
@@ -187,16 +187,16 @@ class Rangeset():
                         # ensure uniform boundary representation
                         boundary = MultiLineString([p.boundary]) if isinstance(p.boundary, LineString) else p.boundary
 
-                        bb = boundary[0].coords.xy
-                        holes_x = [h.coords.xy[0].tolist() for h in boundary[1:]]
-                        holes_y = [h.coords.xy[1].tolist() for h in boundary[1:]]
+                        bb = boundary.geoms[0].coords.xy
+                        holes_x = [h.coords.xy[0].tolist() for h in list(boundary.geoms)[1:]]
+                        holes_y = [h.coords.xy[1].tolist() for h in list(boundary.geoms)[1:]]
                         poly_pos[0].append([[bb[0].tolist()]+holes_x])
                         poly_pos[1].append([[bb[1].tolist()]+holes_y]) 
 
                         poly_color.append(c)
 
                     # store inlier points
-                    filter_points = list(filter(poly.intersects, points)) 
+                    filter_points = list(filter(poly.intersects, points.geoms)) 
                     cnt_in.append(len(filter_points))
                     coords = np.array([pp.coords.xy for pp in filter_points]).reshape(len(filter_points),2).T
                     scatter_pos = np.append(scatter_pos, coords, 1)
@@ -204,7 +204,7 @@ class Rangeset():
                     scatter_size += [self.size_inside]*len(coords[0])
 
                     # store outlier points
-                    filter_points = list(filter(poly.disjoint, points)) 
+                    filter_points = list(filter(poly.disjoint, points.geoms)) 
                 else:
                     cnt_in.append(0)
 
@@ -225,7 +225,7 @@ class Rangeset():
                 points    = MultiPoint(self.points_2d[df_select.index])
                 poly      = unary_union([polygon for polygon in triangulate(points) if self._max_edge(polygon) < self.threshold])
 
-                filter_points = points
+                filter_points = points.geoms
 
                 # points are in one or multiple polygons
                 if not poly.is_empty:
@@ -236,16 +236,16 @@ class Rangeset():
                         # ensure uniform boundary representation
                         boundary = MultiLineString([p.boundary]) if isinstance(p.boundary, LineString) else p.boundary
 
-                        bb = boundary[0].coords.xy
-                        holes_x = [h.coords.xy[0].tolist() for h in boundary[1:]]
-                        holes_y = [h.coords.xy[1].tolist() for h in boundary[1:]]
+                        bb = boundary.geoms[0].coords.xy
+                        holes_x = [h.coords.xy[0].tolist() for h in list(boundary.geoms)[1:]]
+                        holes_y = [h.coords.xy[1].tolist() for h in list(boundary.geoms)[1:]]
                         poly_pos[0].append([[bb[0].tolist()]+holes_x])
                         poly_pos[1].append([[bb[1].tolist()]+holes_y]) 
 
                         poly_color.append(c)
 
                     # store inlier points
-                    filter_points = list(filter(poly.intersects, points)) 
+                    filter_points = list(filter(poly.intersects, points.geoms)) 
                     cnt_in.append(len(filter_points))
                     coords = np.array([pp.coords.xy for pp in filter_points]).reshape(len(filter_points),2).T
                     scatter_pos = np.append(scatter_pos, coords, 1)
@@ -253,7 +253,7 @@ class Rangeset():
                     scatter_size += [self.size_inside]*len(coords[0])
 
                     # store outlier points
-                    filter_points = list(filter(poly.disjoint, points)) 
+                    filter_points = list(filter(poly.disjoint, points.geoms)) 
                 else:
                     cnt_in.append(0)
 
