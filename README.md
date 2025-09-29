@@ -5,7 +5,7 @@ Code for the paper _Attribute-based Explanation of Non-Linear Embeddings of High
 presented at IEEE VIS 21 -- published in IEEE Transactions on Visualization and Computer Graphics (TVCG).
 
 Preferably cited as: \
-J.-T. Sohns, M. Schmitt, F. Jirasek, H. Hasse, H. Leitte. Attribute-based Explanations of Non-Linear Embeddings of High-Dimensional Data. _IEEE Transactions on Visualization and Computer Graphics (2022)_, 28(1), 540-550. _DOI: https://doi.org/10.1109/TVCG.2021.3114870_
+J.-T. Sohns, M. Schmitt, F. Jirasek, H. Hasse, H. Leitte. Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data. _IEEE Transactions on Visualization and Computer Graphics (2022)_, 28(1), 540-550. _DOI: https://doi.org/10.1109/TVCG.2021.3114870_
 
 ## Video Explanations
 
@@ -38,9 +38,3 @@ Start the interactive web app:
 ```
 panel serve --show my_data.ipynb
 ```
-
-## Acknowledgements
-This work was inspired and supported by:
-- IRTG 2057
-- NFDI DataPlant
-- Dagstuhl workshop
