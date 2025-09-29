@@ -9,7 +9,7 @@ J.-T. Sohns, M. Schmitt, F. Jirasek, H. Hasse, H. Leitte. Attribute-based Explan
 
 ## Video Explanations
 
-![teaser image](https://github.com/Jan-To/nolies/blob/main/teaser_img.png)
+![teaser image](https://github.com/Jan-To/nolies/blob/main/teaser_img.jpg)
 
 [Preview Video on RPTU-hosted Site (2min)](https://vcm.uni-kl.de/Panopto/Pages/Viewer.aspx?id=f37f5bac-7f0f-4cf3-9ea5-b367007ece9c)
 
